@@ -88266,6 +88266,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 411507738529588383, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}
   m_PrefabInstance: {fileID: 5670654686966975566}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1327786167 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3178470798978815264, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}
+  m_PrefabInstance: {fileID: 5670654686966975566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1345725959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92823,7 +92828,7 @@ PrefabInstance:
     - target: {fileID: 5118088579744301771, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}
       propertyPath: deathSoundEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1327786167}
     - target: {fileID: 8235661710544222644, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}
       propertyPath: cherriesText
       value: 
