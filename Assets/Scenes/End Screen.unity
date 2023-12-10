@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GANE COMPLETED
+  m_Text: GAME COMPLETED
 --- !u!222 &51924366
 CanvasRenderer:
   m_ObjectHideFlags: 0
