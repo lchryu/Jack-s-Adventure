@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     private void DoubleJump()
     {
         jumpSoundEffect.Play();
-        rb.velocity = new Vector3(0, jumpForce, 0);
+        rb.velocity = new Vector3(0, jumpForce * 0.7f, 0);
         remainingJumps--;
     }
 
