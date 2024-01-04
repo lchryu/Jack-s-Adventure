@@ -20,7 +20,13 @@ public class PLayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
+            HealthSystem.Health--;
             Die();
+            if (HealthSystem.Health <= 0)
+            {
+                Debug.Log("Game Over!");
+                GameOver();
+            }
         }
     }
 
@@ -34,5 +40,10 @@ public class PLayerLife : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void GameOver()
+    {
+        SceneManager.LoadScene(3);
     }
 }
