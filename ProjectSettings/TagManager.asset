@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cherry
   - Trap
+  - HeartItem
   layers:
   - Default
   - TransparentFX

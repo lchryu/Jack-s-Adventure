@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +22,13 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             cherries++;
             cherriesText.text = "Cherries: " + cherries;
+
+        }
+
+        if (collision.gameObject.CompareTag("HeartItem"))
+        {
+            HealthSystem.Health++;
+            Destroy(collision.gameObject);
         }
     }
 }
