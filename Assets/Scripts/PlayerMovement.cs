@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     SpriteRenderer sprite;
     private BoxCollider2D coll;
-
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
