@@ -57,6 +57,6 @@ public class PLayerLife : MonoBehaviour
 
     private void GameOver()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("End Screen");
     }
 }
