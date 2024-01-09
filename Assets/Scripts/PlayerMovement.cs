@@ -51,14 +51,14 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimationUpdate();
     }
 
-    private void Jump()
+    public void Jump()
     {
         jumpSoundEffect.Play();
         rb.velocity = new Vector3(0, jumpForce, 0);
         remainingJumps = extraJumps; // Reset số lượng double jumps khi nhảy từ mặt đất
     }
 
-    private void DoubleJump()
+    public void DoubleJump()
     {
         jumpSoundEffect.Play();
         rb.velocity = new Vector3(0, jumpForce * 0.7f, 0);
