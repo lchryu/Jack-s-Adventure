@@ -7,6 +7,9 @@ TagManager:
   - Cherry
   - Trap
   - HeartItem
+  - quaivat
+  - Spear
+  - Audio
   layers:
   - Default
   - TransparentFX

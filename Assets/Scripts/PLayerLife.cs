@@ -8,9 +8,19 @@ public class PLayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    
+    // tạm thời bỏ cái này đi vì đã sử dụng audio manager
+    //[SerializeField] private AudioSource deathSoundEffect;
+    AudioManager audioManager;
 
-    [SerializeField] private AudioSource deathSoundEffect;
+
+
     [SerializeField] private Transform respawnPoint; // Set this in the inspector
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -33,7 +43,9 @@ public class PLayerLife : MonoBehaviour
 
     private void Die()
     {
-        deathSoundEffect.Play();
+        // tạm thời bỏ cái này đi vì đã sử dụng audio manager
+        //deathSoundEffect.Play();
+        audioManager.PlaySFX(audioManager.death);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
