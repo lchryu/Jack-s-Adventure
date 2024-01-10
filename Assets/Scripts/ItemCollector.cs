@@ -8,8 +8,14 @@ public class ItemCollector : MonoBehaviour
     static public int cherries = 0;
 
     [SerializeField] private Text cherriesText;
-
-    [SerializeField] private AudioSource collectionSoundEffect;
+    
+    // tạm thời bỏ cái này đi vì đã sử dụng audio manager
+    //[SerializeField] private AudioSource collectionSoundEffect;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void Start()
     {
         cherriesText.text = "Cherries: " + cherries;
@@ -18,7 +24,9 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cherry"))
         {
-            collectionSoundEffect.Play();
+            // tạm thời bỏ cái này đi vì đã sử dụng audio manager
+            //collectionSoundEffect.Play();
+            audioManager.PlaySFX(audioManager.collect);
             Destroy(collision.gameObject);
             cherries++;
             cherriesText.text = "Cherries: " + cherries;
@@ -29,6 +37,7 @@ public class ItemCollector : MonoBehaviour
         {
             HealthSystem.Health++;
             Destroy(collision.gameObject);
+            audioManager.PlaySFX(audioManager.collect);
         }
     }
 }

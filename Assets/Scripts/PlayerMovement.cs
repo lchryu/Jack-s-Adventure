@@ -19,7 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState { idle, running, jumping, falling, doubleJumping };
 
-    [SerializeField] private AudioSource jumpSoundEffect;
+    // su dung audioManager
+    //[SerializeField] private AudioSource jumpSoundEffect;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -53,14 +60,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        jumpSoundEffect.Play();
+        //jumpSoundEffect.Play();
+        audioManager.PlaySFX(audioManager.jump);
         rb.velocity = new Vector3(0, jumpForce, 0);
         remainingJumps = extraJumps; // Reset số lượng double jumps khi nhảy từ mặt đất
     }
 
     public void DoubleJump()
     {
-        jumpSoundEffect.Play();
+        //jumpSoundEffect.Play();
+        audioManager.PlaySFX(audioManager.jump);
         rb.velocity = new Vector3(0, jumpForce * 0.7f, 0);
         remainingJumps--;
     }

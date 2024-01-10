@@ -8,17 +8,23 @@ public class Finish : MonoBehaviour
 
     private AudioSource finishSound;
     private bool levelCompleted = false;
+    AudioManager audioManager;
 
 
-    private void Start()
+    //private void Start()
+    //{
+    //    finishSound = GetComponent<AudioSource>();
+    //}
+    private void Awake()
     {
-        finishSound = GetComponent<AudioSource>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player" && !levelCompleted)
         {
-            finishSound.Play();
+            //finishSound.Play();
+            audioManager.PlaySFX(audioManager.finish);
             levelCompleted = true;
             Invoke("CompleteLevel", 2f);
         }
