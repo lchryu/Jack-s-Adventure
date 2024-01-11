@@ -9,11 +9,7 @@ public class PLayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     
-    // tạm thời bỏ cái này đi vì đã sử dụng audio manager
-    //[SerializeField] private AudioSource deathSoundEffect;
     AudioManager audioManager;
-
-
 
     [SerializeField] private Transform respawnPoint; // Set this in the inspector
 
@@ -36,6 +32,7 @@ public class PLayerLife : MonoBehaviour
             if (HealthSystem.Health <= 0)
             {
                 Debug.Log("Game Over!");
+                SaveCherries();
                 GameOver();
             }
         }
@@ -43,8 +40,6 @@ public class PLayerLife : MonoBehaviour
 
     private void Die()
     {
-        // tạm thời bỏ cái này đi vì đã sử dụng audio manager
-        //deathSoundEffect.Play();
         audioManager.PlaySFX(audioManager.death);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
@@ -52,17 +47,9 @@ public class PLayerLife : MonoBehaviour
 
     private void RestartLevel()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         // Instead of reloading the scene, reset the player's position
         transform.position = respawnPoint.position;
-        // You can also reset any other necessary variables or components here
-        // For example, you might want to reset the player's velocity
         rb.bodyType = RigidbodyType2D.Dynamic;
-
-
-        // If needed, you can deactivate the death animation trigger
-        //anim.ResetTrigger("death");
 
         anim.SetTrigger("alive");
     }
@@ -70,5 +57,14 @@ public class PLayerLife : MonoBehaviour
     private void GameOver()
     {
         SceneManager.LoadScene("End Screen");
+    }
+    private void SaveCherries()
+    {
+        // Lưu số lượng cherry vào PlayerPrefs khi người chơi chết
+        int currentCherries = PlayerPrefs.GetInt("Cherries", 0);
+        currentCherries += ItemCollector.cherries; // Thêm vào số lượng cherry đã kiếm được
+        PlayerPrefs.SetInt("Cherries", currentCherries);
+        PlayerPrefs.Save();
+        Debug.Log("current cherry" + currentCherries);
     }
 }
