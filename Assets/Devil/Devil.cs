@@ -18,6 +18,17 @@ public class Devil : MonoBehaviour
 
     void Start()
     {
+        try
+        {
+            playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
+        if (playerMovement != null) Debug.Log("Devil.playerMove != null");
+        else Debug.Log("Devil.playerMove == null");
         shotTime = Time.time;
         sprite = GetComponent<SpriteRenderer>();
         sprite.flipX = true;

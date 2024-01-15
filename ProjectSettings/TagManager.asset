@@ -10,6 +10,11 @@ TagManager:
   - quaivat
   - Spear
   - Audio
+  - CherriesText
+  - CheckPoint
+  - BankCherry
+  - Notifi
+  - PriceText
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class Finish : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && !levelCompleted)
+        if (collision.gameObject.CompareTag("Player") && !levelCompleted)
         {
             //finishSound.Play();
             audioManager.PlaySFX(audioManager.finish);
