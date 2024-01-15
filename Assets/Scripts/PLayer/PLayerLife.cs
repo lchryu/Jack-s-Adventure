@@ -11,11 +11,14 @@ public class PLayerLife : MonoBehaviour
     
     AudioManager audioManager;
 
-    [SerializeField] private Transform respawnPoint; // Set this in the inspector
+    [SerializeField] public Transform respawnPoint; // Set this in the inspector
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        respawnPoint = GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<Transform>();
+        if (respawnPoint == null) Debug.Log("RespawnPoint is null");
+        else Debug.Log("RespawnPoint is ref");
     }
 
     void Start()

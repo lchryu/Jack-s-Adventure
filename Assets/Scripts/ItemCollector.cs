@@ -15,6 +15,16 @@ public class ItemCollector : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        cherriesText = GameObject.FindGameObjectWithTag("CherriesText").GetComponent<Text>();
+        // Log the result
+        if (cherriesText != null)
+        {
+            Debug.Log("cherriesText successfully obtained!");
+        }
+        else
+        {
+            Debug.LogError("Failed to get cherriesText!");
+        }
     }
     private void Start()
     {

@@ -20,6 +20,6 @@ public class OptionMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Bạn có thể thêm logic cập nhật khác ở đây nếu cần
+        Debug.Log("from optionmenu");
     }
 }
