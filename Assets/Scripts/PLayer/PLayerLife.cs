@@ -70,4 +70,16 @@ public class PLayerLife : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("current cherry" + currentCherries);
     }
+    public static void SaveCherriesStatic()
+    {
+        // Lưu số lượng cherry vào PlayerPrefs khi người choiw về main menu
+        int currentCherries = PlayerPrefs.GetInt("Cherries", 0);
+        currentCherries += ItemCollector.cherries; // Thêm vào số lượng cherry đã kiếm được
+        PlayerPrefs.SetInt("Cherries", currentCherries);
+        PlayerPrefs.Save();
+        Debug.Log("current cherry" + currentCherries);
+
+        // reset score 
+        ItemCollector.cherries = 0;
+    }
 }
