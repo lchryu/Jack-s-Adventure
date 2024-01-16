@@ -28,6 +28,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spear : MonoBehaviour
 {
@@ -58,9 +59,15 @@ public class Spear : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            HealthSystem.Health--;
             Destroy(this.gameObject);
+            HealthSystem.Health--;
             Debug.Log("destroy spear");
+            if (HealthSystem.Health <= 0)
+            {
+                HealthSystem.ResetHealthSystem();
+                ItemCollector.SaveCherriesToPlayerPrefs();
+                SceneManager.LoadScene("End Screen");
+            }
         }
     }
     void CheckDestroyCondition()

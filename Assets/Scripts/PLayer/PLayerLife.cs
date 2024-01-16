@@ -36,7 +36,6 @@ public class PLayerLife : MonoBehaviour
             {
                 Debug.Log("Game Over!");
                 HealthSystem.ResetHealthSystem();
-                //HealthSystem.Health = 2;
                 ItemCollector.SaveCherriesToPlayerPrefs();
                 GameOver();
             }
