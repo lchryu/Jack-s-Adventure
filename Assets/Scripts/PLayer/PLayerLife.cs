@@ -35,7 +35,9 @@ public class PLayerLife : MonoBehaviour
             if (HealthSystem.Health <= 0)
             {
                 Debug.Log("Game Over!");
-                SaveCherries();
+                HealthSystem.ResetHealthSystem();
+                //HealthSystem.Health = 2;
+                ItemCollector.SaveCherriesToPlayerPrefs();
                 GameOver();
             }
         }
@@ -61,15 +63,7 @@ public class PLayerLife : MonoBehaviour
     {
         SceneManager.LoadScene("End Screen");
     }
-    private void SaveCherries()
-    {
-        // Lưu số lượng cherry vào PlayerPrefs khi người chơi chết
-        int currentCherries = PlayerPrefs.GetInt("Cherries", 0);
-        currentCherries += ItemCollector.cherries; // Thêm vào số lượng cherry đã kiếm được
-        PlayerPrefs.SetInt("Cherries", currentCherries);
-        PlayerPrefs.Save();
-        Debug.Log("current cherry" + currentCherries);
-    }
+
     public static void SaveCherriesStatic()
     {
         // Lưu số lượng cherry vào PlayerPrefs khi người choiw về main menu

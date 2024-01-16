@@ -15,6 +15,7 @@ TagManager:
   - BankCherry
   - Notifi
   - PriceText
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
