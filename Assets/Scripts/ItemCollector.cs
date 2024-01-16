@@ -50,4 +50,16 @@ public class ItemCollector : MonoBehaviour
             audioManager.PlaySFX(audioManager.collect);
         }
     }
+
+    public static void SaveCherriesToPlayerPrefs()
+    {
+        // Lưu số lượng cherry vào PlayerPrefs khi người chơi chết
+        int currentCherries = PlayerPrefs.GetInt("Cherries", 0);
+        currentCherries += ItemCollector.cherries; // Thêm vào số lượng cherry đã kiếm được
+        PlayerPrefs.SetInt("Cherries", currentCherries);
+        PlayerPrefs.Save();
+
+        cherries = 0;
+        Debug.Log("current cherry" + currentCherries);
+    }
 }
