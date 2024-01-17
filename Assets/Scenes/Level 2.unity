@@ -87926,7 +87926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a258f179a5fcca84db174fc325476726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1327786166}
 --- !u!1001 &522597726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89327,11 +89326,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 241353556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1327786166 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 411507738529588383, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}
-  m_PrefabInstance: {fileID: 5670654686966975566}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1327786167 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3178470798978815264, guid: e9e388b51d7d5e344ad43369e5c7c89f, type: 3}

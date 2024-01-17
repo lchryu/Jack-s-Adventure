@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
+        HealthSystem.ResetHealthSystem();
         PLayerLife.SaveCherriesStatic();
     }
     public void Resume()
