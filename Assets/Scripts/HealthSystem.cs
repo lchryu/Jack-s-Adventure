@@ -12,7 +12,6 @@ public class HealthSystem : MonoBehaviour
     public Sprite EmptyHeart;
 
 
-    private static int initialHealth = 2; // Biến này lưu trữ giá trị Health ban đầu
     public static void ResetHealthSystem()
     {
         Health = 2;
